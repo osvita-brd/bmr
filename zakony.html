@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Закони | Відділ освіти Бердянської міської ради</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Стилі для карток */
+    .laws-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .law-card {
+      background: #f9f9ff;
+      border: 2px solid #004080;
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .law-card:hover {
+      background: #e6f0ff;
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .law-card a {
+      text-decoration: none;
+      color: #004080;
+      font-weight: bold;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+    }
+    .law-card a::before {
+      content: "⚖️";
+      margin-right: 10px;
+      font-size: 22px;
+    }
+    .law-card p {
+      margin-top: 8px;
+      color: #333;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <a id="top"></a>
+
+  <header class="site-header">
+  <div class="logo-title">
+    <img src="img/vds2.PNG" alt="Логотип" class="logo">
+    <h1>
+      Відділ освіти виконавчого комітету<br>
+      Бердянської міської ради
+    </h1>
+  </div>
+
+  <button class="menu-toggle" aria-label="Меню">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Новини</a></li>
+
+      <li class="has-submenu">
+        <a href="#" class="submenu-toggle">
+          Заклади освіти <span class="arrow">▼</span>
+        </a>
+        <ul class="submenu">
+          <li><a href="school.html">Шкільні</a></li>
+          <li><a href="doshkilni.html">Дошкільні</a></li>
+          <li><a href="pozashkilni.html">Позашкільні</a></li>
+        </ul>
+      </li>
+
+      <li><a href="zakony.html">Закони</a></li>
+      <li><a href="zakupivli.html">Державні закупівлі</a></li>
+      <li><a href="plan.html">План роботи</a></li>
+      <li><a href="contakty.html">Контакти</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<div class="nav-overlay"></div>
+
+  <main>
+    <h1>Закони та нормативна база</h1>
+    <p>Ознайомтесь із ключовими законами та постановами у сфері освіти України:</p>
+
+    <div class="laws-container">
+      <div class="law-card">
+        <a href="https://zakon.rada.gov.ua/laws/show/2145-19#Text" target="_blank">Закон України «Про освіту»</a>
+        <p>Базовий закон, що регулює систему освіти в Україні.</p>
+      </div>
+
+      <div class="law-card">
+        <a href="https://zakon.rada.gov.ua/laws/show/2628-14#Text" target="_blank">Закон України «Про дошкільну освіту»</a>
+        <p>Визначає правові засади та стандарти дошкільної освіти.</p>
+      </div>
+
+      <div class="law-card">
+        <a href="https://zakon.rada.gov.ua/laws/show/463-20#Text" target="_blank">Закон України «Про повну загальну середню освіту»</a>
+        <p>Містить положення щодо функціонування шкіл та навчання дітей.</p>
+      </div>
+
+      <div class="law-card">
+        <a href="https://zakon.rada.gov.ua/laws/show/752-2011-п#Text" target="_blank">Постанова КМУ «Про створення Єдиної державної електронної бази з питань освіти»</a>
+        <p>Запроваджує єдину електронну базу для управління освітніми процесами.</p>
+      </div>
+
+      <div class="law-card">
+        <a href="https://zakon.rada.gov.ua/laws/show/z1000-18#Text" target="_blank">Наказ МОН «Про затвердження форм звітності закладів освіти»</a>
+        <p>Визначає звітність закладів загальної середньої освіти.</p>
+      </div>
+
+      <div class="law-card">
+        <a href="https://zakon.rada.gov.ua/laws/show/z0997-18#Text" target="_blank">Наказ МОН «Про затвердження форми звітності педагогічних працівників»</a>
+        <p>Регулює порядок звітування щодо складу педагогічних кадрів.</p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </main>
+
+  <footer class="site-footer">
+
+<div class="footer-top-line"></div>
+
+<div class="footer-container">
+
+  <div class="footer-block footer-logo">
+    <img src="img/vds2.PNG" alt="Логотип">
+    <p>
+      Відділ освіти<br>
+      Бердянської міської ради
+    </p>
+  </div>
+
+  <div class="footer-block">
+    <h3>Корисні посилання</h3>
+    <ul>
+      <li><a href="https://howareu.com/" target="_blank">Ментальне здоровʼя</a></li>
+      <li><a href="http://osvita.zoda.gov.ua/" target="_blank">Департамент освіти ЗОДА</a></li>
+      <li><a href="https://brd.gov.ua/" target="_blank">Бердянська громада</a></li>
+      <li><a href="https://mon.gov.ua/" target="_blank">Міністерство освіти і науки України</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="footer-bottom">
+  © 2026 Відділ освіти Бердянської міської ради  
+  <br>
+  Всі права захищені
+</div>
+
+<a href="#top" class="back-top">↑ На головну</a>
+
+</footer>
+

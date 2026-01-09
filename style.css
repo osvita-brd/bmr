@@ -1,0 +1,531 @@
+@import url(reset.css);
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+/* Базові стилі для новин віконцями (картками) */
+/* Базова стилізація для новин як віконця/картки */
+.news {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.news-item.window {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  align-items: stretch;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  position: relative;
+}
+
+.news-item.window .news-img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #f0f0f0;
+  flex-shrink: 0;
+}
+
+.news-item.window .news-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-item.window h2 {
+  font-size: 1.15rem;
+  margin: 0 0 8px;
+  line-height: 1.25;
+  color: #1f2937;
+}
+
+.news-item.window p {
+  margin: 0 0 8px;
+  color: #374151;
+}
+
+.news-item.window ul {
+  margin: 6px 0 0 20px;
+  padding: 0;
+  list-style: disc;
+  color: #374151;
+}
+
+/* Текст, який буде розгортатися */
+.news-extra {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s ease;
+}
+
+.news-extra.collapsed {
+  /* стан згорнуто */
+  max-height: 0;
+}
+
+.news-extra:not(.collapsed) {
+  /* стан розгорнуто: фактична висота вмісту буде обчислена JS або за фіксованою відстанню*/
+  max-height: 1000px; /* достатньо для більшості текстів; при потребі збільшіть */
+}
+
+/* Кнопка керування */
+.toggle-btn {
+  align-self: flex-start;
+  margin-top: 6px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #1d72b8;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+.toggle-btn:focus {
+  outline: 2px solid #1d4ed8;
+}
+
+
+/* Мобільна адаптивність для вікон новин */
+@media (max-width: 768px) {
+  .news-item.window {
+    flex-direction: column;
+  }
+
+  .news-item.window .news-img {
+    width: 100%;
+    height: 180px;
+  }
+}
+
+/* Загальні стилі для тіла */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Шапка */
+
+header .logo-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header .logo-title h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  line-height: 1.3;
+}
+
+header .logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+/* ================= НАВІГАЦІЯ ================= */
+/* Базова навігація (ПК) */
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 10px;
+}
+
+.main-nav a:hover {
+  background: rgba(255,255,255,0.15);
+  border-radius: 6px;
+}
+
+/* Підменю (ПК) */
+.has-submenu {
+  position: relative;
+}
+
+.has-submenu .submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  display: none;
+  min-width: 200px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+.submenu a {
+  color: #333;
+  padding: 10px 14px;
+  display: block;
+}
+
+/* ===== Бургер кнопка ===== */
+
+
+/* ================= МОБІЛЬНА ВЕРСІЯ ================= */
+/* ================= FOOTER ================= */
+
+.site-footer {
+  background: #0f4c81;
+  color: #fff;
+  margin-top: 40px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.footer-block h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid rgba(255,255,255,0.3);
+  padding-bottom: 5px;
+}
+
+.footer-block p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-block li {
+  margin-bottom: 8px;
+}
+
+.footer-block a {
+  color: #dbeafe;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-block a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* нижня частина */
+.footer-bottom {
+  background: #08345a;
+  text-align: center;
+  padding: 12px;
+  font-size: 0.85rem;
+}
+
+/* мобільна адаптація */
+@media (max-width: 480px) {
+  .footer-container {
+    text-align: center;
+  }
+}
+
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #1d72b8;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  z-index: 10000;
+}
+
+
+body {
+  padding-top: 90px;
+}
+
+/* ================= НАВІГАЦІЯ (ПК) ================= */
+
+
+.has-submenu {
+  position: relative;
+}
+
+@media (min-width: 769px) {
+  .has-submenu:hover .submenu {
+    display: block;
+  }
+}
+
+/* ================= ПІДМЕНЮ ================= */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 200px;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.submenu a {
+  color: #333;
+  padding: 10px 14px;
+  display: block;
+}
+
+/* ================= БУРГЕР ================= */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 26px;
+  height: 3px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ================= OVERLAY ================= */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 9000;
+}
+
+.nav-overlay.active {
+  display: block;
+}
+
+/* ================= МОБІЛЬНЕ МЕНЮ ================= */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 64px;              /* ← КЛЮЧОВА ПРАВКА */
+    left: 0;
+    right: 0;
+    background: #fff;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 9999;
+  }
+
+  .main-nav.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .main-nav ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-nav a {
+    color: #1d72b8;
+    padding: 14px 20px;
+  }
+
+  .submenu {
+    position: static;
+    background: #f5f7fa;
+    box-shadow: none;
+  }
+
+  .has-submenu.open .submenu {
+    display: block;
+  }
+
+  .arrow {
+    color: #1d72b8;
+  }
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ===== ЗАКУПІВЛІ У ВІКОНЦЯХ ===== */
+.procurement-item h2 {
+  font-size: 1.15rem;
+  color: #0b5fa5;
+}
+
+.procurement-item p {
+  font-size: 0.95rem;
+}
+
+.procurement-item a {
+  color: #0b5fa5;
+  text-decoration: underline;
+}
+
+/* Однакова висота карток у згорнутому вигляді */
+.procurement-item .news-content {
+  min-height: 220px; /* підігнати під твій дизайн */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Кнопка завжди внизу */
+.procurement-item .toggle-btn {
+  margin-top: auto;
+}
+
+/* Контейнер для новин і закупівель */
+.news,
+.page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== СІТКА ТІЛЬКИ ДЛЯ ЗАКУПІВЕЛЬ ===== */
+.procurement-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Вікна закупівель завжди на всю ширину колонки */
+.procurement-list .news-item.window {
+  width: 100%;
+}
+
+/* ===== ТАБЛИЦЯ ПЛАНУ ===== */
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.plan-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.plan-table th,
+.plan-table td {
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.plan-table th {
+  background: #1d72b8;
+  color: #fff;
+  font-weight: 600;
+}
+
+.plan-table tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+/* мобільна адаптація */
+@media (max-width: 768px) {
+  .plan-table th,
+  .plan-table td {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+}
+
+/* ===== Верхня лінія ===== */
+.footer-top-line {
+  height: 4px;
+  background: linear-gradient(to right, #1d72b8, #4ea5ff);
+}
+
+/* ===== Логотип ===== */
+.footer-logo img {
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+/* ===== Кнопка нагору ===== */
+.back-top {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  background: #1d72b8;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: 0.3s;
+}
+
+.back-top:hover {
+  background: #0f4c81;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакти | Відділ освіти Бердянської міської ради</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contacts {
+      max-width: 1000px;
+      margin: 20px auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    .contact-box, .leader-box {
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .contact-box h2, .leader-box h2 {
+      color: #0056b3;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+    .contact-box p, .leader-box p {
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+    .emoji {
+      font-size: 1.2em;
+      margin-right: 6px;
+    }
+    .map {
+      max-width: 1000px;
+      margin: 30px auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+    }
+    @media (max-width: 768px) {
+      .contacts {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a id="top"></a>
+
+ <header class="site-header">
+  <div class="logo-title">
+    <img src="img/vds2.PNG" alt="Логотип" class="logo">
+    <h1>
+      Відділ освіти виконавчого комітету<br>
+      Бердянської міської ради
+    </h1>
+  </div>
+
+  <button class="menu-toggle" aria-label="Меню">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Новини</a></li>
+
+      <li class="has-submenu">
+        <a href="#" class="submenu-toggle">
+          Заклади освіти <span class="arrow">▼</span>
+        </a>
+        <ul class="submenu">
+          <li><a href="school.html">Шкільні</a></li>
+          <li><a href="doshkilni.html">Дошкільні</a></li>
+          <li><a href="pozashkilni.html">Позашкільні</a></li>
+        </ul>
+      </li>
+
+      <li><a href="zakony.html">Закони</a></li>
+      <li><a href="zakupivli.html">Державні закупівлі</a></li>
+      <li><a href="plan.html">План роботи</a></li>
+      <li><a href="contakty.html">Контакти</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<div class="nav-overlay"></div>
+
+  <main>
+    <h1 style="text-align:center; color:#004080;">Контакти</h1>
+    <section class="contacts">
+      <!-- Ліва колонка -->
+      <div class="contact-box">
+        <h2>Основні контакти</h2>
+        <p><span class="emoji">📍</span><strong>Адреса:</strong> м. Запоріжжя, пр. Соборний 142, каб. 48</p>
+        <p><span class="emoji">📧</span><strong>Email:</strong> osvitabrd@ukr.net</p>
+        <p><span class="emoji">📞</span><strong>Телефон:</strong> +380998371957</p>
+        <p><span class="emoji">⏰</span><strong>Час прийому:</strong> вівторок, четвер з 09:00 до 12:00</p>
+      </div>
+
+      <!-- Права колонка -->
+      <div class="leader-box">
+        <h2>Керівництво</h2>
+        <p><span class="emoji">👩‍💼</span><strong>Начальник відділу освіти:</strong><br> Фурманова Тетяна Ігорівна</p>
+        <p><span class="emoji">📝</span><strong>Уповноважена особа:</strong><br> Єговська Марина Іванівна</p>
+      </div>
+    </section>
+
+    <!-- Карта -->
+    <div class="map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2613.304616965149!2d35.137!3d47.838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dc5e4a32adfbf9%3A0x9b0b6f0bde9f0e9f!2z0LLRg9C70LjRhtGPINCf0L7Qu9Cw0YDRg9C7LCDQodGC0LXRgNGW0Y8sIDcwMDAw!5e0!3m2!1suk!2sua!4v1700000000000" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+    <script src="script.js"></script>
+  </main>
+
+  <footer class="site-footer">
+
+<div class="footer-top-line"></div>
+
+<div class="footer-container">
+
+  <div class="footer-block footer-logo">
+    <img src="img/vds2.PNG" alt="Логотип">
+    <p>
+      Відділ освіти<br>
+      Бердянської міської ради
+    </p>
+  </div>
+
+  <div class="footer-block">
+    <h3>Корисні посилання</h3>
+    <ul>
+      <li><a href="https://howareu.com/" target="_blank">Ментальне здоровʼя</a></li>
+      <li><a href="http://osvita.zoda.gov.ua/" target="_blank">Департамент освіти ЗОДА</a></li>
+      <li><a href="https://brd.gov.ua/" target="_blank">Бердянська громада</a></li>
+      <li><a href="https://mon.gov.ua/" target="_blank">Міністерство освіти і науки України</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="footer-bottom">
+  © 2026 Відділ освіти Бердянської міської ради  
+  <br>
+  Всі права захищені
+</div>
+
+<a href="#top" class="back-top">↑ На головну</a>
+
+</footer>
+
+
