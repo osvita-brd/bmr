@@ -349,7 +349,7 @@ header .logo {
 
   .main-nav {
     position: fixed;
-    top: 64px;              /* ← КЛЮЧОВА ПРАВКА */
+    top: 100px;              /* ← КЛЮЧОВА ПРАВКА */
     left: 0;
     right: 0;
     background: #fff;
