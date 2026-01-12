@@ -256,23 +256,18 @@ header .logo {
 
 
 .site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: static;   /* тепер рухається */
   background: #1d72b8;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
-  z-index: 10000;
 }
 
 
-body {
-  padding-top: 90px;
-}
+
+
 
 /* ================= НАВІГАЦІЯ (ПК) ================= */
 
