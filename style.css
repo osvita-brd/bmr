@@ -256,14 +256,15 @@ header .logo {
 
 
 .site-header {
-  position: static;   /* тепер рухається */
   background: #1d72b8;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
+  flex-wrap: wrap; /* ← ГОЛОВНЕ */
 }
+
 
 
 
@@ -341,41 +342,45 @@ header .logo {
 }
 
 /* ================= МОБІЛЬНЕ МЕНЮ ================= */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
 
   .menu-toggle {
     display: flex;
   }
 
   .main-nav {
-    position: fixed;
+    display: none;
+    width: 100%;
+    position: static;
     max-height: calc(100vh - 80px);
     overflow-y: auto;
-    top: 100px;              /* ← КЛЮЧОВА ПРАВКА */
     left: 0;
     right: 0;
     background: #fff;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
     z-index: 9999;
-  }
+}
+
 
   .main-nav.active {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
+    display: block;
   }
 
   .main-nav ul {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav li {
+    width: 100%;
+    border-bottom: 1px solid #e5e7eb;
   }
 
   .main-nav a {
+    text-align: left;   /* ← ВАЖЛИВО */
     color: #1d72b8;
     padding: 14px 20px;
+    width: 100%;
   }
 
   .submenu {
@@ -392,6 +397,8 @@ header .logo {
     color: #1d72b8;
   }
 }
+
+
 
 body.menu-open {
   overflow: hidden;
