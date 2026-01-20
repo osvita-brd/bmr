@@ -524,6 +524,17 @@ body.menu-open {
   background: #0f4c81;
 }
 
+.youtube-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.youtube-link .icon {
+  width: 20px;
+  height: 20px;
+}
+
 
 
 
