@@ -32,21 +32,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.querySelector('.main-nav');
   const overlay = document.querySelector('.nav-overlay');
 
+  function openMenu() {
+    nav.classList.add('active');
+    overlay.classList.add('active');
+    menuToggle.classList.add('active');
+    document.body.classList.add('menu-open'); // блокує скрол
+    menuToggle.setAttribute('aria-expanded', 'true');
+  }
+
   function closeMenu() {
     nav.classList.remove('active');
     overlay.classList.remove('active');
     menuToggle.classList.remove('active');
-    document.querySelectorAll('.has-submenu').forEach(i => i.classList.remove('open'));
+    document.body.classList.remove('menu-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+
+    document.querySelectorAll('.has-submenu')
+      .forEach(i => i.classList.remove('open'));
   }
 
   menuToggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-    overlay.classList.toggle('active');
-    menuToggle.classList.toggle('active');
+    nav.classList.contains('active') ? closeMenu() : openMenu();
   });
 
   overlay.addEventListener('click', closeMenu);
 
+  // Закриття по ESC
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  // Підменю
   document.querySelectorAll('.submenu-toggle').forEach(link => {
     link.addEventListener('click', e => {
       if (window.innerWidth <= 768) {
@@ -56,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
 
 function openMenu() {
   document.body.style.overflow = 'hidden';
