@@ -559,7 +559,7 @@ body.menu-open {
 /* ❄️ СНІГ */
 .site-header {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* БАЗА */
@@ -624,6 +624,11 @@ body.menu-open {
   from { transform: translateY(0); }
   to   { transform: translateY(70%); }
 }
+
+.has-submenu.open .submenu {
+  display: block;
+}
+
 
 
 
