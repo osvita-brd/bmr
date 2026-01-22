@@ -82,6 +82,19 @@ function closeMenu() {
   document.body.style.overflow = '';
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  const snow = document.querySelector('.snow');
+  const month = new Date().getMonth(); 
+  // 11,0,1 = грудень, січень, лютий
+
+  if (month === 11 || month === 0 || month === 1) {
+    snow.style.display = 'block';
+  } else {
+    snow.style.display = 'none';
+  }
+});
+
+
 
 
 

@@ -550,6 +550,85 @@ body.menu-open {
   color: #0f4c81;
 }
 
+/* ❄️ СНІГ У ШАПЦІ */
+.site-header {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ❄️ СНІГ */
+.site-header {
+  position: relative;
+  overflow: hidden;
+}
+
+/* БАЗА */
+.snow {
+  position: absolute;
+  top: -200%;
+  left: 0;
+  width: 100%;
+  height: 400%;
+  pointer-events: none;
+  background-repeat: repeat;
+}
+
+/* ФОН – ПОВІЛЬНИЙ */
+.snow-back {
+  background-image:
+    radial-gradient(2px 2px at 10% 10%, #fff, transparent),
+    radial-gradient(2px 2px at 30% 40%, #fff, transparent),
+    radial-gradient(2px 2px at 50% 20%, #fff, transparent),
+    radial-gradient(2px 2px at 70% 60%, #fff, transparent),
+    radial-gradient(2px 2px at 90% 30%, #fff, transparent);
+  animation: snowSlow 20s linear infinite;
+  opacity: 0.4;
+}
+
+/* СЕРЕДНІЙ */
+.snow-mid {
+  background-image:
+    radial-gradient(3px 3px at 15% 20%, #fff, transparent),
+    radial-gradient(3px 3px at 35% 60%, #fff, transparent),
+    radial-gradient(3px 3px at 55% 40%, #fff, transparent),
+    radial-gradient(3px 3px at 75% 80%, #fff, transparent),
+    radial-gradient(3px 3px at 95% 30%, #fff, transparent);
+  animation: snowMid 12s linear infinite;
+  opacity: 0.7;
+}
+
+/* ПЕРЕДНІЙ – ШВИДКИЙ */
+.snow-front {
+  background-image:
+    radial-gradient(4px 4px at 20% 10%, #fff, transparent),
+    radial-gradient(4px 4px at 40% 50%, #fff, transparent),
+    radial-gradient(4px 4px at 60% 30%, #fff, transparent),
+    radial-gradient(4px 4px at 80% 70%, #fff, transparent),
+    radial-gradient(4px 4px at 95% 40%, #fff, transparent);
+  animation: snowFast 7s linear infinite;
+  opacity: 1;
+}
+
+/* АНІМАЦІЇ */
+@keyframes snowSlow {
+  from { transform: translateY(0); }
+  to   { transform: translateY(40%); }
+}
+
+@keyframes snowMid {
+  from { transform: translateY(0); }
+  to   { transform: translateY(55%); }
+}
+
+@keyframes snowFast {
+  from { transform: translateY(0); }
+  to   { transform: translateY(70%); }
+}
+
+
+
+
+
 
 
 
