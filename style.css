@@ -30,7 +30,7 @@
 .news-item.window .news-img {
   width: 200px;
   height: 160px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 12px;
   background: #f0f0f0;
   flex-shrink: 0;
@@ -105,7 +105,7 @@
   aspect-ratio: 16 / 9; /* адаптивне співвідношення */
   height: auto;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 }
