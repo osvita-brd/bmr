@@ -83,16 +83,16 @@ function closeMenu() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const snow = document.querySelector('.snow');
-  const month = new Date().getMonth(); 
-  // 11,0,1 = грудень, січень, лютий
+  const snowLayers = document.querySelectorAll('.snow');
+  const month = new Date().getMonth();
 
-  if (month === 11 || month === 0 || month === 1) {
-    snow.style.display = 'block';
-  } else {
-    snow.style.display = 'none';
-  }
+  const isWinter = month === 11 || month === 0 || month === 1;
+
+  snowLayers.forEach(layer => {
+    layer.style.display = isWinter ? 'block' : 'none';
+  });
 });
+
 
 
 
